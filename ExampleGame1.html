@@ -70,9 +70,9 @@ function create ()
     platforms.enableBody = true ;
     //指派給變數 platorm 的目的在於下一行需要設定該平台的物體特性 (摩擦力)
     platforms.create(400, 568, 'ground');
-    platforms.create(600, 400, 'platform');
-    platforms.create(350, 250, 'ice-platform');
-    platforms.create(750, 220, 'platform');
+    platforms.create(400, 400, 'platform');
+    platforms.create(150, 250, 'ice-platform');
+    platforms.create(550, 220, 'platform');
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
 
