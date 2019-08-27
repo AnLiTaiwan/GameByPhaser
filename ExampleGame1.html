@@ -62,7 +62,6 @@ function preload ()
 
 function create ()
 {
-    game.physics.startSystem(Phaser.Physics.ARCADE);
     //  A simple background for our game
     this.add.image(400, 300, 'background');
 
@@ -70,15 +69,11 @@ function create ()
     platforms = this.physics.add.staticGroup();
     platforms.enableBody = true ;
     //指派給變數 platorm 的目的在於下一行需要設定該平台的物體特性 (摩擦力)
-    var platform = platforms.create(400, 568, 'ground');
-    platform.body.friction.x = 1 ;
-    platform = platforms.create(600, 400, 'platform');
-    platform.body.friction.x = 1 ;
-    platform = platforms.create(350, 250, 'ice-platform');
-    platform.body.friction.x = 0 ;
+    platforms.create(400, 568, 'ground');
+    platforms.create(600, 400, 'platform');
+    var platform = platforms.create(350, 250, 'ice-platform');
+    platforms.setFrictionX(0);
     platforms.create(750, 220, 'platform');
-
-    this.platforms.setAll('body.immovable', true) ;
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
 
