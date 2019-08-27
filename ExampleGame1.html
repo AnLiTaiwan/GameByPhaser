@@ -16,8 +16,13 @@
 
 var config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    scale: {
+        mode: Phaser.Scale.FIT,
+        parent: 'phaser-example',
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: 800,
+        height: 600
+    },
     physics: {
         default: 'arcade',
         arcade: {
@@ -51,6 +56,7 @@ function preload ()
     this.load.image('star', 'ExamleGame1/star.png');
     this.load.image('bomb', 'ExamleGame1/bomb.png');
     this.load.spritesheet('dude', 'ExamleGame1/dude.png', { frameWidth: 32, frameHeight: 48 });
+    this.load.spritesheet('fullscreen', 'UI/fullscreen.png', { frameWidth: 32, frameHeight: 32 });
 }
 
 function create ()
@@ -129,6 +135,20 @@ function create ()
     this.physics.add.overlap(player, stars, collectStar, null, this);
 
     this.physics.add.collider(player, bombs, hitBomb, null, this);
+
+    var button = this.add.image(800-16, 16, 'fullscreen', 0).setOrigin(1, 0).setInteractive();
+    button.on('pointerup', function () {
+        if (this.scale.isFullscreen)
+        {
+            button.setFrame(0);
+            this.scale.stopFullscreen();
+        }
+        else
+        {
+            button.setFrame(1);
+            this.scale.startFullscreen();
+        }
+    }, this);
 }
 
 function update ()
