@@ -2,8 +2,8 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8" />
-    <title>Game Example 1</title>
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <title>Game Example 1</title>   
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.19.0/dist/phaser-arcade-physics.min.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -55,7 +55,7 @@ function preload ()
     this.load.image('star', 'ExamleGame1/star.png');
     this.load.image('bomb', 'ExamleGame1/bomb.png');
     this.load.spritesheet('dude', 'ExamleGame1/dude.png', { frameWidth: 32, frameHeight: 48 });
-    this.load.spritesheet('fullscreen', 'UI/fullscreen.png', { frameWidth: 32, frameHeight: 32 });
+    this.load.spritesheet('fullscreen', 'UI/fullscreen.png', { frameWidth: 64, frameHeight: 64 });
 }
 
 function create ()
