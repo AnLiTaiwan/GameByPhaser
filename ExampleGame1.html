@@ -134,7 +134,10 @@ function update ()
 {
     if (gameOver)
     {
-        return;
+        player.setVelocity(100, 450) ;
+        score = 0 ;
+        bombs.disableBody(true,true) ;
+        stars.disableBody(true,true) ;
     }
 
     if (cursors.left.isDown)
@@ -194,7 +197,6 @@ function hitBomb (player, bomb)
     player.anims.play('turn');
     gameOver = true;
 }
-
 
 </script>
 </body>
