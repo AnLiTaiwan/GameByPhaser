@@ -135,7 +135,7 @@ function update ()
 {
     if (gameOver)
     {
-        return;
+        game.state.restart() ;
     }
 
     if (cursors.left.isDown)
