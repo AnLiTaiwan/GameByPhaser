@@ -66,14 +66,21 @@ function create ()
     this.add.image(400, 300, 'background');
 
     //  The platforms group contains the ground and the 2 ledges we can jump on
-    platforms = this.physics.add.staticGroup();
-    platforms.enableBody = true ;
-    //指派給變數 platorm 的目的在於下一行需要設定該平台的物體特性 (摩擦力)
-    platforms.create(400, 568, 'ground');
-    platforms.create(600, 400, 'platform');
-    platforms.create(350, 250, 'ice-platform');
-    platforms.getChildren()[2].setFrictionX(0);
-    platforms.create(750, 220, 'platform');
+    ground = this.physics.add.staticGroup();
+    ground.create(400, 568, 'ground');
+    platforms = this.physics.add.group({
+        key: 'platform',
+        frameQuantity: 2,
+        setXY: { x: 600, y: 400, strpX: 150 , stepY: -200 },
+        immovable: true
+    });
+    ice_platforms = this.physics.add.group({
+        key: 'ice-platform',
+        frameQuantity: 1,
+        setXY: { x: 350, y: 250},
+        immovable: true,
+        setFrictionX: 0 
+    });
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
 
@@ -128,6 +135,12 @@ function create ()
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
+    this.physics.add.collider(player, ice_platforms);
+    this.physics.add.collider(stars, ice_platforms);
+    this.physics.add.collider(bombs, ice_platforms);
+    this.physics.add.collider(player, ground);
+    this.physics.add.collider(stars, ground);
+    this.physics.add.collider(bombs, ground);
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     this.physics.add.overlap(player, stars, collectStar, null, this);
