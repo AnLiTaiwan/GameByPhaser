@@ -196,6 +196,7 @@ function hitBomb (player, bomb)
     game.state.start('Over');
 }
 
+
 Game.Over = function(game) {};
 Game.Over.prototype = {  
     create: function() {    
@@ -209,6 +210,8 @@ Game.Over.prototype = {
             game.state.start('Play');  
     }
 };
+
+
 
 
 </script>
