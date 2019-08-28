@@ -140,6 +140,9 @@ var mainScene = new Phaser.Class({
         })
         
         playText.visible = false
+        this.input.once('pointerdown', function (event) {
+            this.scene.restart();
+        }, this);
         
     }, // create
     update:function ()
