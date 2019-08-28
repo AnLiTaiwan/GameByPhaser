@@ -68,7 +68,6 @@ function create ()
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = this.physics.add.staticGroup();
     platforms.enableBody = true ;
-    //指派給變數 platorm 的目的在於下一行需要設定該平台的物體特性 (摩擦力)
     platforms.create(400, 568, 'ground');
     platforms.create(400, 400, 'platform');
     platforms.create(150, 250, 'ice-platform');
@@ -146,13 +145,32 @@ function create ()
             this.scale.startFullscreen();
         }
     }, this);
+
+    playText = this.add.text(350, 300, '重新開始', {
+        fontSize: '24px',
+        fill: '#000'
+    })
+    playText.setInteractive().on('pointerdown', function (pointer, localX, localY, event) {
+        score = 0
+        gameOver = false 
+        event.scene.scene.restart()
+        /* Q: 為何這裡用event.scene.scene？               */
+        /* Mia: Phaser scene指向的位置有點亂               */
+        /*      比較保險的作法是：用console.log看現在指向哪  */
+    })
+    
+    /* 這裡一開始先不顯示，玩家 gameOver 後再顯示 */
+    playText.visible = false
+    
 }
 
 function update ()
 {
     if (gameOver)
     {   
-        return ;
+        /* 顯示’重新開始’ */
+        playText.visible = true
+        return;
     }
 
     if (cursors.left.isDown)
