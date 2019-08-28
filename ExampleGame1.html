@@ -137,7 +137,7 @@ var mainScene = new Phaser.Class({
         
         playText.visible = false
         this.input.once('pointerdown', function (event) {
-            if ( gameOver == true )
+            if ( gameOver === true )
             {
                 this.scene.restart();
                 score = 0 ;
