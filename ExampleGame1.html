@@ -109,17 +109,7 @@ var mainScene = new Phaser.Class({
                 cursors[key].isDown = false ;
             }
             // Create a button helper
-            const createBtn = (key, x, y, width=WIDTH, height=HEIGHT) => {
-                // Add a faded out red rectangle for our button
-                this.add.rectangle(x, y, width, height, 0xff0000, 0.07)
-                    .setOrigin(0,0)
-                    .setScrollFactor(0)
-                    .setInteractive()
-                    .on('pointerdown', () => pointerDown(key))
-			        .on('pointerup', () => pointerUp(key))
-            }
-			
-			const createBtn = (key, x, y, img) => {
+            const createBtn = (key, x, y, img) => {
                 // Add a faded out red rectangle for our button
 				this.add.image(x, y, img)
 					.setOrigin(0,0)
