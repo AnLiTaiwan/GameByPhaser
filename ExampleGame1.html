@@ -96,12 +96,6 @@ var mainScene = new Phaser.Class({
             // keyboard listeners to be user for each key
             this.input.addPointer(2);  
             this.input.topOnly = true; 
-            const WIDTH = 167;
-            const HEIGHT = 153;
-            // gutter width between buttons
-            const GUTTER = 12;
-            
-                        
             const pointerDown = key => {
                 cursors[key].isDown = true ;
             }
@@ -118,14 +112,17 @@ var mainScene = new Phaser.Class({
                     .on('pointerdown', () => pointerDown(key))
 			        .on('pointerup', () => pointerUp(key))
             }
-            
+			
+            // gutter width between buttons
+            const GUTTER = 12; 
+			const WIDTH = 160;
+            const HEIGHT = 160;
             // Y coordinate to place buttons
             const BTN_Y = 600 - HEIGHT - GUTTER;
-
             // create player control buttons
             createBtn('left', GUTTER, BTN_Y,'arrow-left');
-            createBtn('right', WIDTH + 2*GUTTER, 'arrow-right');
-            createBtn('up', 800 - 2*(WIDTH + GUTTER), 'arrow-up');
+            createBtn('right', WIDTH + 2*GUTTER, BTN_Y, 'arrow-right');
+            createBtn('up', 800 - 2*(WIDTH + GUTTER), BTN_Y, 'arrow-up');
             createBtn('down', 800 - WIDTH - GUTTER, BTN_Y, 'arrow-down');
         }
 
