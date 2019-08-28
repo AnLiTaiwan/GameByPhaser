@@ -93,10 +93,10 @@ var mainScene = new Phaser.Class({
             this.input.addPointer(2);  
             this.input.topOnly = true; 
             const pointerDown = key => {
-                this.cursors[key].isDown = true
+                this.cursors.key.isDown = true ;
             }
             const pointerUp = key => {
-                this.cursors[key].isDown = false
+                this.cursors.key.isDown = false ;
             }
             const WIDTH = 167;
             const HEIGHT = 153;
