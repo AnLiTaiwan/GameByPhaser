@@ -153,8 +153,8 @@ function create ()
     playText.setInteractive().on('pointerdown', function (pointer, localX, localY, event) {
         score = 0
         gameOver = false 
-        event.scene.scene.restart()
-        /* Q: 為何這裡用event.scene.scene？               */
+        event.scene.restart()
+        /* Q: 為何這裡用event.scene？               */
         /* Mia: Phaser scene指向的位置有點亂               */
         /*      比較保險的作法是：用console.log看現在指向哪  */
     })
