@@ -212,13 +212,7 @@ var mainScene = new Phaser.Class({
             {
                 player.setVelocityY(-330);
             }
-        } else {
-            if ( this.cursors[left].isDown ) {
-                player.setVelocityX(-160);
-                player.anims.play('left', true);
-            }
-        }
-        
+        }         
 
         bombs.children.iterate(bomb => {
             const v = 100;
