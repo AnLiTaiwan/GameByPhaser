@@ -107,7 +107,7 @@ function create ()
     stars = this.physics.add.group({
         key: 'star',
         repeat: 5,
-        setXY: { x: 12, y: 0, stepX: 157 }
+        setXY: { x: 12, y: 0, stepX: 155 }
     });
 
     stars.children.iterate(function (child) {
@@ -152,11 +152,9 @@ function create ()
     })
     playText.setInteractive().on('pointerdown', function (pointer, localX, localY, event) {
         //event.scene.scene.restart() ;
-        this.input.addUpCallback(() => {
-            this.scene.restart();        
-            score = 0 ;
-            gameOver = false  ;
-        }, true)
+        this.scene.restart();        
+        score = 0 ;
+        gameOver = false  ;
     })
     
     /* 這裡一開始先不顯示，玩家 gameOver 後再顯示 */
