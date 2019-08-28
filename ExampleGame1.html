@@ -92,19 +92,18 @@ var mainScene = new Phaser.Class({
             // keyboard listeners to be user for each key
             this.input.addPointer(2);  
             this.input.topOnly = true; 
-            const pointerDown = key => {
-                if ( key == 'left')
-                    this.cursors.left.isDown = true ;
-            }
-            const pointerUp = key => {
-                if ( key == 'left')
-                    this.cursors.left.isDown = false ;
-            }
             const WIDTH = 167;
             const HEIGHT = 153;
             // gutter width between buttons
             const GUTTER = 12;
-
+            
+                        
+            const pointerDown = key => {
+                cursors[key].isDown = true ;
+            }
+            const pointerUp = key => {
+                cursors[key].isDown = false ;
+            }
             // Create a button helper
             const createBtn = (key, x, y, width=WIDTH, height=HEIGHT) => {
                 // Add a faded out red rectangle for our button
