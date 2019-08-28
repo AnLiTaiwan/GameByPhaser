@@ -84,7 +84,11 @@ var mainScene = new Phaser.Class({
         });
 
         //  Input Events
-        cursors = this.input.keyboard.createCursorKeys();
+        if (!this.sys.game.device.input.touch) {
+            cursors = this.input.keyboard.createCursorKeys()
+        } else {
+            this.buildMobileControls()
+        }
 
         //  Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
         stars = this.physics.add.group({
