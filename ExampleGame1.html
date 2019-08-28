@@ -196,6 +196,16 @@ function update ()
     {
         player.setVelocityY(-330);
     }
+
+    bombs.children.iterate(bomb => {
+        const v = 100;
+        const distanceX = player.x - bomb.x;
+        const distanceY = player.y - bomb.y;
+        const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+        const vx = v * (distanceX / distance);
+        const vy = v * (distanceY / distance);
+        bomb.setVelocity(vx, vy);
+    })
 }
 
 function collectStar (player, star)
