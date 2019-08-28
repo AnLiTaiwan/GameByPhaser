@@ -87,6 +87,8 @@ var mainScene = new Phaser.Class({
         if (!this.sys.game.device.input.touch) {
             cursors = this.input.keyboard.createCursorKeys()
         } else {
+            cursors = this.input.keyboard.createCursorKeys()
+            // 要加上虛擬鍵盤(未開發)
         }
 
         //  Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
