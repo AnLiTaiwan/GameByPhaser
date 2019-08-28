@@ -151,12 +151,12 @@ function create ()
         fill: '#000'
     })
     playText.setInteractive().on('pointerdown', function (pointer, localX, localY, event) {
-        score = 0
-        gameOver = false 
-        event.scene.restart()
-        /* Q: 為何這裡用event.scene？               */
-        /* Mia: Phaser scene指向的位置有點亂               */
-        /*      比較保險的作法是：用console.log看現在指向哪  */
+        //event.scene.scene.restart() ;
+        this.input.addUpCallback(() => {
+            this.scene.restart();        
+            score = 0 ;
+            gameOver = false  ;
+        }, true)
     })
     
     /* 這裡一開始先不顯示，玩家 gameOver 後再顯示 */
