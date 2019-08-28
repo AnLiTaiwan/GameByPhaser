@@ -90,13 +90,13 @@ var mainScene = new Phaser.Class({
         }
         
         // Y coordinate to place buttons
-        const BTN_Y = GAME_HEIGHT - HEIGHT - GUTTER
+        const BTN_Y = 600 - HEIGHT - GUTTER
 
         // create player control buttons
         createBtn('left', GUTTER, BTN_Y)
         createBtn('right', WIDTH + 2*GUTTER, BTN_Y)
-        createBtn('up', GAME_WIDTH - 2*(WIDTH + GUTTER), BTN_Y)
-        createBtn('down', GAME_WIDTH - WIDTH - GUTTER, BTN_Y)
+        createBtn('up', 800 - 2*(WIDTH + GUTTER), BTN_Y)
+        createBtn('down', 800 - WIDTH - GUTTER, BTN_Y)
     },// buildMobileControls()
     create: function ()
     {        
