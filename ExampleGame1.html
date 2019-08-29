@@ -108,8 +108,8 @@ var mainScene = new Phaser.Class({
 					.setOrigin(0,0)
                     .setScrollFactor(0)
                     .setInteractive()
-                    .on('pointerdown', () => pointerDown(key))
-			        .on('pointerup', () => pointerUp(key))
+                    .setInteractive().on('pointerdown', () => pointerDown(key))
+			        .setInteractive().on('pointerup', () => pointerUp(key))
             }
 			
             // gutter width between buttons
