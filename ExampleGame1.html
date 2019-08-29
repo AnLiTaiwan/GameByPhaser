@@ -111,8 +111,8 @@ var mainScene = new Phaser.Class({
 					.setOrigin(0,0)
                     .setScrollFactor(0)
                     .setInteractive()
-                    .on('pointerenter', () => pointerDown(key))
-			        .on('pointerout', () => pointerUp(key))
+                    .on('gotpointercapture', () => pointerDown(key))
+			        .on('lostpointercapture', () => pointerUp(key))
                     .on('pointerupoutside', () => pointerUpOutside(key))
             }
 			
