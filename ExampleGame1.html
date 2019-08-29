@@ -212,6 +212,10 @@ var mainScene = new Phaser.Class({
             player.setVelocityY(-330);
         }
 
+        if (cursors.down.isDown)
+        {
+            player.setVelocityY(+110);
+        }
         bombs.children.iterate( bomb => {
             const v = 100;
             const distanceX = player.x - bomb.x;
