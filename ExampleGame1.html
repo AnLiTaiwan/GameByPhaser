@@ -101,6 +101,9 @@ var mainScene = new Phaser.Class({
             const pointerUp = key => {
                 cursors[key].isDown = false ;
             }
+            const pointerUpOutside = key => {
+                cursors[key].isDown = false ;
+            }
             // Create a button helper
             const createBtn = (key, x, y, img) => {
                 // Add a faded out red rectangle for our button
@@ -108,8 +111,9 @@ var mainScene = new Phaser.Class({
 					.setOrigin(0,0)
                     .setScrollFactor(0)
                     .setInteractive()
-                    .setInteractive().on('pointerdown', () => pointerDown(key))
-			        .setInteractive().on('pointerup', () => pointerUp(key))
+                    .on('pointerdown', () => pointerDown(key))
+			        .on('pointerup', () => pointerUp(key))
+                    .on('pointerupoutside', () => pointerUpOutside(key))
             }
 			
             // gutter width between buttons
