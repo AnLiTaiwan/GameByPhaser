@@ -1,19 +1,3 @@
-<!doctype html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8" />
-    <title>Game Example 1</title>   
-    <script src="js/phaser@3.19.0/phaser-arcade-physics.min.js"></script>
-    <script src="js/ExampleGame1.js"></script>
-    <style type="text/css">
-        body {
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
-
-<script type="text/javascript">
 
 var player;
 var stars;
@@ -274,8 +258,3 @@ function hitBomb (player, bomb)
     player.anims.play('turn');
     gameOver = true;
 } // hitBomb (player, bomb)
-
-</script>
-
-</body>
-</html>
