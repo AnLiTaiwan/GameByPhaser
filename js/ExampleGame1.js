@@ -29,8 +29,8 @@ var mainScene = new Phaser.Class({
         this.load.image('arrow-left', 'UI/arrow-left.png');
         this.load.image('arrow-right', 'UI/arrow-right.png');
         this.load.image('arrow-down', 'UI/arrow-down.png');
-        this.load.spritesheet('jolteon', 'ExamleGame1/jolteon_running65.625x50.png', { frameWidth: 68, frameHeight: 48 });
-        this.load.spritesheet('fullscreen', 'UI/fullscreen.png', { frameWidth: 65.6, frameHeight: 50 });
+        this.load.spritesheet('jolteon', 'ExamleGame1/jolteon_running65.625x50.png', { frameWidth: 65.6, frameHeight: 50 });
+        this.load.spritesheet('fullscreen', 'UI/fullscreen.png', { frameWidth: 64, frameHeight: 64 });
     }, // preload
     create: function ()
     {        
@@ -54,7 +54,7 @@ var mainScene = new Phaser.Class({
         //  Our player animations, turning, walking left and walking right.
         this.anims.create({
             key: 'left',
-            frames: this.anims.generateFrameNumbers('jolteon', { start: 0, end: 4 }),
+            frames: this.anims.generateFrameNumbers('jolteon', { start: 0, end: 3 }),
             frameRate: 10,
             repeat: -1
         });
@@ -67,7 +67,7 @@ var mainScene = new Phaser.Class({
 
         this.anims.create({
             key: 'right',
-            frames: this.anims.generateFrameNumbers('jolteon', { start: 4, end: 8 }),
+            frames: this.anims.generateFrameNumbers('jolteon', { start: 4, end: 7 }),
             frameRate: 10,
             repeat: -1
         });
