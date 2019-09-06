@@ -124,7 +124,7 @@ function update ()
 
     if (cursors.left.isDown)
     {
-        //player.setVelocityX(-160);
+        player.setVelocityX(-160);
 
         player.anims.play('left', true);
     }
@@ -132,7 +132,7 @@ function update ()
     {
         player.setVelocityX(160);
 
-        player.anims.play('right', true);
+        //player.anims.play('right', true);
     }
     else
     {
